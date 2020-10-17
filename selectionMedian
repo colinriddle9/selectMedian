@@ -1,0 +1,20 @@
+def selectionMedian(alist):
+    '''Return the median of alist, a list of numbers.
+
+    Assume the length of alist is odd.
+    '''
+    for outer in range(len(alist)):
+        minPosition = outer
+        for inner in range(outer+1, len(alist)):
+            if alist[minPosition] > alist[inner]:
+               minPosition = inner
+        temp = alist[outer]
+        alist[outer]= alist[minPosition]
+        alist[minPosition]=temp
+    length = len(alist)
+    if (length % 2 == 0):
+        median = (alist[(length)//2] + alist[(length)//2-1]) / 2
+    else:
+        median = alist[(length-1)//2]
+    return median
+    pass 
