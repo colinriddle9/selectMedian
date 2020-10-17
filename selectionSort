@@ -1,0 +1,11 @@
+def selectionSort(alist):
+    '''Sort alist in place, using selection sort.'''
+    for outer in range(len(alist)):
+        minPosition = outer
+        for inner in range(outer+1, len(alist)):
+            if alist[minPosition] > alist[inner]:
+               minPosition = inner
+        temp = alist[outer]
+        alist[outer]= alist[minPosition]
+        alist[minPosition]=temp
+    return alist
